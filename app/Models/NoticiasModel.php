@@ -11,6 +11,12 @@ class NoticiasModel extends Model
     protected $table = 'noticias';
     protected $primaryKey = 'id';
     protected $allowedFields = ['titulo', 'autor', 'descricao'];
+    protected $useSoftDeletes = true;
+    protected $useTimestamps = true;
+    protected $dateFormat ='datetime';
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
+    protected $deletedField = 'deleted_at';
 
     //Método GET
     public function getNoticias($id = false)

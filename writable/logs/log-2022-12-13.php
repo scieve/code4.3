@@ -33,3 +33,20 @@ CRITICAL - 2022-12-13 11:33:55 --> Undefined offset: 0
 #4 /home/scieve/code4/public/index.php(45): CodeIgniter\CodeIgniter->run()
 #5 /home/scieve/code4/system/Commands/Server/rewrite.php(34): require_once('/home/scieve/co...')
 #6 {main}
+CRITICAL - 2022-12-13 12:13:28 --> pg_query(): Query failed: ERROR:  column &quot;updated_at&quot; of relation &quot;noticias&quot; does not exist
+LINE 1: ...s&quot; (&quot;titulo&quot;, &quot;autor&quot;, &quot;descricao&quot;, &quot;created_at&quot;, &quot;updated_a...
+                                                             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/scieve/code4/system/Database/Postgre/Connection.php(194): pg_query()
+#2 /home/scieve/code4/system/Database/BaseConnection.php(738): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /home/scieve/code4/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /home/scieve/code4/system/Database/BaseBuilder.php(2166): CodeIgniter\Database\BaseConnection->query()
+#5 /home/scieve/code4/system/Model.php(713): CodeIgniter\Database\BaseBuilder->insert()
+#6 /home/scieve/code4/system/Model.php(541): CodeIgniter\Model->insert()
+#7 /home/scieve/code4/app/Controllers/Noticias.php(74): CodeIgniter\Model->save()
+#8 /home/scieve/code4/system/CodeIgniter.php(847): App\Controllers\Noticias->gravar()
+#9 /home/scieve/code4/system/CodeIgniter.php(338): CodeIgniter\CodeIgniter->runController()
+#10 /home/scieve/code4/system/CodeIgniter.php(246): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/scieve/code4/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#12 /home/scieve/code4/system/Commands/Server/rewrite.php(34): require_once('/home/scieve/co...')
+#13 {main}
