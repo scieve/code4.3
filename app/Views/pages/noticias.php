@@ -1,4 +1,5 @@
 <div class="container">
+    <a href="<?= '/noticias/inserir' ?>" class="btn btn-primary">Adicionar Notícia</a>
     <?php if (!empty($noticias)  && is_array($noticias)) : ?>
         <?php foreach ($noticias as $noticias_item) : ?>
             <div class="card my-5">

@@ -43,4 +43,42 @@ class Noticias extends Controller
         echo view('pages/noticia', $data);
         echo view('templates/footer', $data);
     }
+
+    public function inserir()
+    {
+
+        helper('form');
+        $data['title'] = 'Inserir Notícias';
+
+
+        echo view('templates/header', $data);
+        echo view('pages/noticia_gravar');
+        echo view('templates/footer');
+    }
+
+    public function gravar()
+    {
+        helper('form');
+        $model = new NoticiasModel();
+
+        if ($this->validate([
+            'titulo'        => ['label' => 'Título', 'rules' => 'required|min_length[3]|max_length[100]'],
+            'autor '        => ['label' => 'Autor', 'rules' => 'required|min_length[3]|max_length[100]'],
+            'descricao '    => ['label' => 'Descricao', 'rules' => 'required|min_length[3]']
+        ])) {
+
+            $model->save([
+                'id' => $this->request->getVar('id'),
+                'titulo' => $this->request->getVar('titulo'),
+                'autor' => $this->request->getVar('autor'),
+                'descricao' => $this->request->getVar('descricao'),
+            ]);
+            return redirect('noticias');
+        } else {
+            $data['title'] = 'Erro ao gravar a Notícia';
+            echo view('templates/header', $data);
+            echo view('pages/noticia_gravar');
+            echo view('templates/footer');
+        }
+    }
 }
