@@ -104,4 +104,11 @@ class Noticias extends Controller
         echo view('pages/noticia_gravar', $data);
         echo view('templates/footer');
     }
+
+    public function excluir($id = NULL)
+    {
+        $model = new NoticiasModel();
+        $model->delete($id);
+        return redirect('noticias');
+    }
 }
