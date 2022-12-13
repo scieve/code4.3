@@ -25,10 +25,19 @@ class Usuarios extends Controller
         $senha = $this->request->getVar('senha');
 
         $data['usuarios'] = $model->getUsuarios($user, $senha);
+        $data['session'] = \Config\Services::session();
+
+
 
         if (empty($data['usuarios'])) {
             return redirect('login');
         } else {
+            $sessionData = [
+                'user'  => $user,
+                'logged_in' => TRUE
+            ];
+
+            $data['session']->set($sessionData);
             return redirect('noticias');
         }
     }

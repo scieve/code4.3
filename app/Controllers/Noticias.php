@@ -46,6 +46,11 @@ class Noticias extends Controller
 
     public function inserir()
     {
+        $data['session'] = \Config\Services::session();
+        if (!$data['session']->get('logged_in')) {
+            return redirect('login');
+        }
+
 
         helper('form');
         $data['title'] = 'Inserir Notícias';
@@ -58,6 +63,11 @@ class Noticias extends Controller
 
     public function gravar()
     {
+
+        $data['session'] = \Config\Services::session();
+        if (!$data['session']->get('logged_in')) {
+            return redirect('login');
+        }
         helper('form');
         $model = new NoticiasModel();
 
@@ -89,8 +99,14 @@ class Noticias extends Controller
 
         $data = [
             'title'     => 'Editar Notícias',
-            'noticias'  => $model->getNoticias($id)
+            'noticias'  => $model->getNoticias($id),
+            'session'   => \Config\Services::session(),
         ];
+
+        if (!$data['session']->get('logged_in')) {
+            return redirect('login');
+        }
+
 
         if (empty($data['noticias'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Não é possível encontrar a notícia com id: ' . $id);
@@ -107,6 +123,11 @@ class Noticias extends Controller
 
     public function excluir($id = NULL)
     {
+
+        $data['session'] = \Config\Services::session();
+        if (!$data['session']->get('logged_in')) {
+            return redirect('login');
+        }
         $model = new NoticiasModel();
         $model->delete($id);
         return redirect('noticias');
