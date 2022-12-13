@@ -11,5 +11,16 @@
 
 <body>
     <div class="container">
-        <h1><?= $title; ?></h1>
+        <div class="row">
+            <div class="col-md-9">
+              <h1><?= $title; ?></h1>
+            </div>
+            <div class="col-md-3">
+            <?php if($session->get('logged_in')): ?>
+                <p>Bem-vindo ao sistema, <?php $session->get('user') ?> ! <a href="/usuarios/logout">Sair</a></p>
+            <?php else: ?>
+                <a href="/login" class="btn btn-primary">Entrar no Sistema</a>
+            <?php endif; ?>
+            </div>
+        </div>
     </div>

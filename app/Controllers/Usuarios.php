@@ -10,6 +10,8 @@ class Usuarios extends Controller
     public function index()
     {
 
+        $data['session'] = \Config\Services::session();
+
         $data['title'] = 'Login';
 
         echo view('templates/header', $data);
@@ -40,5 +42,14 @@ class Usuarios extends Controller
             $data['session']->set($sessionData);
             return redirect('noticias');
         }
+    }
+
+    public function logout(){
+        $data['session'] = \Config\Services::session();
+        $data['session']->destroy();
+        return redirect('login');
+
+
+        
     }
 }

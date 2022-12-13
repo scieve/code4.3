@@ -14,7 +14,8 @@ class Noticias extends Controller
 
         $data = [
             'title' => 'Últimas Notícias',
-            'noticias' => $model->getNoticias()
+            'noticias' => $model->getNoticias(),
+            'session'  => \Config\Services::session()
         ];
 
 
@@ -27,6 +28,7 @@ class Noticias extends Controller
     public function item($id = NULL)
     {
 
+        $data['session'] = \Config\Services::session();
         $model = new NoticiasModel();
 
         $data['noticias'] = $model->getNoticias($id);
@@ -131,5 +133,14 @@ class Noticias extends Controller
         $model = new NoticiasModel();
         $model->delete($id);
         return redirect('noticias');
+    }
+
+    public function logout(){
+        $data['session'] = \Config\Services::session();
+        $data['session']->destroy();
+        return redirect('login');
+
+
+        
     }
 }

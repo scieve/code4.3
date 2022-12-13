@@ -10,7 +10,7 @@
             <input type="password" name="senha" class="form-control">
         </div>
 
-        <input type="submit" name="submit" value="Entrar" class="btn btn-primary">
+        <input type="submit" name="submit" value="Login" class="btn btn-primary">
 
     </form>
 </div>
