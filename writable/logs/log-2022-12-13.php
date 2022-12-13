@@ -50,3 +50,12 @@ LINE 1: ...s&quot; (&quot;titulo&quot;, &quot;autor&quot;, &quot;descricao&quot;
 #11 /home/scieve/code4/public/index.php(45): CodeIgniter\CodeIgniter->run()
 #12 /home/scieve/code4/system/Commands/Server/rewrite.php(34): require_once('/home/scieve/co...')
 #13 {main}
+CRITICAL - 2022-12-13 12:43:56 --> Undefined variable: sfsf
+#0 /home/scieve/code4/app/Models/UsuariosModel.php(18): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/scieve/code4/app/Controllers/Usuarios.php(27): App\Models\UsuariosModel->getUsuarios()
+#2 /home/scieve/code4/system/CodeIgniter.php(847): App\Controllers\Usuarios->login()
+#3 /home/scieve/code4/system/CodeIgniter.php(338): CodeIgniter\CodeIgniter->runController()
+#4 /home/scieve/code4/system/CodeIgniter.php(246): CodeIgniter\CodeIgniter->handleRequest()
+#5 /home/scieve/code4/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /home/scieve/code4/system/Commands/Server/rewrite.php(34): require_once('/home/scieve/co...')
+#7 {main}
