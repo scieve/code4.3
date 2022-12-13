@@ -81,4 +81,27 @@ class Noticias extends Controller
             echo view('templates/footer');
         }
     }
+
+    public function editar($id = NULL)
+    {
+
+        $model = new NoticiasModel();
+
+        $data = [
+            'title'     => 'Editar Notícias',
+            'noticias'  => $model->getNoticias($id)
+        ];
+
+        if (empty($data['noticias'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Não é possível encontrar a notícia com id: ' . $id);
+        }
+
+
+        $data['title'] = $data['noticias']['titulo'];
+
+
+        echo view('templates/header', $data);
+        echo view('pages/noticia_gravar', $data);
+        echo view('templates/footer');
+    }
 }

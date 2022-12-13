@@ -9,9 +9,9 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="<?= 'noticias/' . $noticias_item['id'] ?>" class="btn btn-success">Saiba mais</a>
-                    <a href="<?= 'noticias/editar/' . $noticias_item['id'] ?>" class="btn btn-warning">Editar</a>
-                    <a href="<?= 'noticias/excluir/' . $noticias_item['id'] ?>" class="btn btn-danger">Excluir</a>
+                    <a href="<?= '/noticias/' . $noticias_item['id'] ?>" class="btn btn-success">Saiba mais</a>
+                    <a href="<?= '/noticias/editar/' . $noticias_item['id'] ?>" class="btn btn-warning">Editar</a>
+                    <a href="<?= '/noticias/excluir/' . $noticias_item['id'] ?>" class="btn btn-danger">Excluir</a>
                 </div>
             </div>
         <?php endforeach; ?>
