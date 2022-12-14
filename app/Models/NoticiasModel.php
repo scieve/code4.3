@@ -10,7 +10,7 @@ class NoticiasModel extends Model
     //Atributos de Configuração
     protected $table = 'noticias';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['titulo', 'autor', 'descricao'];
+    protected $allowedFields = ['titulo', 'autor', 'descricao', 'img'];
     protected $useSoftDeletes = true;
     protected $useTimestamps = true;
     protected $dateFormat ='datetime';
