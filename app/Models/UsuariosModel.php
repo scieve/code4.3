@@ -9,6 +9,8 @@ class UsuariosModel extends Model
 
     //Atributos de Configuração
     protected $table = 'usuarios';
+    protected $allowedFields = ['user', 'senha'];
+
 
 
     //Método GET
