@@ -3,7 +3,7 @@
         <?= \Config\Services::validation()->listerrors(); ?>
     </div>
 
-    <form action="<?= '/noticias/gravar/' ?>" method="post">
+    <form action="<?= '/noticias/gravar/' ?>" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="titulo">Titulo</label>
             <input type="text" class="form-control" name="titulo" value="<?= isset($noticias['titulo']) ? $noticias['titulo'] : set_value('titulo') ?>">
@@ -17,6 +17,10 @@
             <textarea class="form-control" name="descricao">
                 <?= isset($noticias['descricao']) ? $noticias['descricao'] : set_value('descricao') ?>
             </textarea>
+        </div>
+        <div class="form-group">
+            <label for="autor">Imagem</label><br/>
+            <input type="file" name="img">
         </div>
         <input type="hidden" name="id" value="<?= isset($noticias['id']) ? $noticias['id'] : set_value('id') ?>">
         <input type="submit" name="submit" class="btn btn-primary" value="Salvar">

@@ -72,20 +72,41 @@ class Noticias extends Controller
         }
         helper('form');
         $model = new NoticiasModel();
-
+        
         if ($this->validate([
             'titulo'        => ['label' => 'Título', 'rules' => 'required|min_length[3]|max_length[100]'],
             'autor '        => ['label' => 'Autor', 'rules' => 'required|min_length[3]|max_length[100]'],
             'descricao '    => ['label' => 'Descricao', 'rules' => 'required|min_length[3]']
         ])) {
 
-            $model->save([
-                'id' => $this->request->getVar('id'),
-                'titulo' => $this->request->getVar('titulo'),
-                'autor' => $this->request->getVar('autor'),
-                'descricao' => $this->request->getVar('descricao'),
-            ]);
-            return redirect('noticias');
+            $id = $this->request->getVar('id'); 
+            $titulo = $this->request->getVar('titulo');
+            $autor = $this->request->getVar('autor');
+            $descricao = $this->request->getVar('descricao');
+
+            if(!$img->isValid()){
+                $model->save([
+                    'id' => $id,
+                    'titulo' => $titulo,
+                    'autor' => $autor,
+                    'descricao' => $descricao,
+                    'img' => $img,
+                ]);
+                return redirect('noticias');
+
+            }else{
+                $validaIMG = $this->validate([
+                    'label' => 'Imagem',
+                    'img' => [
+                        'uploaded[img]',
+                        'mine_in[img,image/jpg,image/jpeg,image/gif,image/png]',
+                        'max_size[img,4096]',
+                    ],
+                ])
+            }
+
+
+            
         } else {
             $data['title'] = 'Erro ao gravar a Notícia';
             echo view('templates/header', $data);
@@ -135,12 +156,5 @@ class Noticias extends Controller
         return redirect('noticias');
     }
 
-    public function logout(){
-        $data['session'] = \Config\Services::session();
-        $data['session']->destroy();
-        return redirect('login');
-
-
-        
-    }
+    
 }
