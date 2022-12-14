@@ -14,7 +14,8 @@ class Noticias extends Controller
 
         $data = [
             'title' => 'Últimas Notícias',
-            'noticias' => $model->getNoticias(),
+            'noticias' => $model->paginate(3),
+            'pager' => $model->pager,
             'session'  => \Config\Services::session()
         ];
 
