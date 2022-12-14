@@ -9,6 +9,7 @@
             <label for="senha">Senha</label>
             <input type="password" name="senha" class="form-control">
         </div>
+        <?= csrf_field(); ?>
 
         <input type="submit" name="submit" value="Login" class="btn btn-primary">
 
