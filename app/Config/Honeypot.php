@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -16,14 +18,14 @@ class Honeypot extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $label = 'Fill This Field';
+	public $label = 'Adicione um texto';
 
 	/**
 	 * Honeypot Field Name
 	 *
 	 * @var string
 	 */
-	public $name = 'honeypot';
+	public $name = 'texto1';
 
 	/**
 	 * Honeypot HTML Template
