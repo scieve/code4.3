@@ -22,3 +22,22 @@ CRITICAL - 2022-12-14 07:59:34 --> Imagem não é uma regra válida.
 #7 /home/scieve/code4/public/index.php(45): CodeIgniter\CodeIgniter->run()
 #8 /home/scieve/code4/system/Commands/Server/rewrite.php(34): require_once('/home/scieve/co...')
 #9 {main}
+CRITICAL - 2022-12-14 08:47:09 --> Undefined variable: session
+#0 /home/scieve/code4/app/Views/templates/header.php(19): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/scieve/code4/system/View/View.php(236): include('/home/scieve/co...')
+#2 /home/scieve/code4/system/Common.php(176): CodeIgniter\View\View->render()
+#3 /home/scieve/code4/app/Controllers/Pages.php(24): view()
+#4 /home/scieve/code4/system/CodeIgniter.php(847): App\Controllers\Pages->mostrar()
+#5 /home/scieve/code4/system/CodeIgniter.php(338): CodeIgniter\CodeIgniter->runController()
+#6 /home/scieve/code4/system/CodeIgniter.php(246): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/scieve/code4/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /home/scieve/code4/system/Commands/Server/rewrite.php(34): require_once('/home/scieve/co...')
+#9 {main}
+CRITICAL - 2022-12-14 09:02:53 --> Undefined property: CodeIgniter\HTTP\RedirectResponse::$back
+#0 /home/scieve/code4/app/Controllers/Pages.php(36): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/scieve/code4/system/CodeIgniter.php(847): App\Controllers\Pages->limparCache()
+#2 /home/scieve/code4/system/CodeIgniter.php(338): CodeIgniter\CodeIgniter->runController()
+#3 /home/scieve/code4/system/CodeIgniter.php(246): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/scieve/code4/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /home/scieve/code4/system/Commands/Server/rewrite.php(34): require_once('/home/scieve/co...')
+#6 {main}

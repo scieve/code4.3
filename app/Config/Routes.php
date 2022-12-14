@@ -81,6 +81,9 @@ $routes->get('login', 'Usuarios::index');
 $routes->get('usuarios/logout', 'Usuarios::logout');
 $routes->get('noticias', 'Noticias::index');
 $routes->get('noticias/(:segment)', 'Noticias::item/$1');
+$routes->get('limparCache', 'Pages::limparCache');
+$routes->get('adicionarCache', 'Pages::adicionarCache');
+$routes->get('subtrairCache', 'Pages::subtrairCache');
 $routes->get('/', 'Pages::mostrar');
 $routes->get('(:any)', 'Pages::mostrar/$1');
 
